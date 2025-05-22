@@ -3,7 +3,7 @@ def main():
     l = get_level()
     score = 0
     for i in range(10):
-        x,y = generate_integer(l)
+        x,y = generate_integer(l),generate_integer(l)
         z = x+y
         num = input(f"{x} + {y} =")
         if num.isdigit() and int(num)== z:
@@ -38,14 +38,13 @@ def get_level():
 def generate_integer(level):
     if level == 1:
         x= random.randint(0,9)
-        y= random.randint(0,9)
     elif level == 2:
         x= random.randint(10,99)
-        y= random.randint(10,99)
     elif level == 3:
         x= random.randint(100,999)
-        y= random.randint(100,999)
-    return x,y
+    else:
+        raise ValueError
+    return x
 
 
 if __name__ == "__main__":
